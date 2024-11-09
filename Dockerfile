@@ -19,7 +19,7 @@ RUN npm run build  # Assumes "build" script is defined in package.json to run "t
 FROM node:16 AS production
 
 # set working directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/
 
 # copy only necessary files from the build stage
 COPY --from=build /usr/src/app/package*.json ./

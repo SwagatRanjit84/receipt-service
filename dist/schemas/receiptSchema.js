@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.receiptSchema = void 0;
-// src/schemas/receiptSchema.ts
+// schema for receipt to check the validate receipt based on api.yml
 exports.receiptSchema = {
     type: "object",
     required: ["retailer", "purchaseDate", "purchaseTime", "items", "total"],

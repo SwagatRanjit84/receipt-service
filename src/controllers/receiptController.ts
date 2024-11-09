@@ -45,5 +45,5 @@ export async function getReceiptPoints(
   const receiptData = getReceiptById(id);
 
   if (!receiptData) res.status(404).json({ error: "Receipt data not found" });
-  res.status(200).json({ points: receiptData.points });
+  else res.status(200).json({ points: receiptData.points });
 }
