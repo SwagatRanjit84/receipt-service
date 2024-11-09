@@ -35,3 +35,15 @@ export async function processReceipt(
     res.status(400).json({ error: error.message });
   }
 }
+
+// controller to get the points of a receipt with the help of its ID
+export async function getReceiptPoints(
+  req: Request,
+  res: Response
+): Promise<void> {
+  const { id } = req.params;
+  const receiptData = getReceiptById(id);
+
+  if (!receiptData) res.status(404).json({ error: "Receipt data not found" });
+  res.status(200).json({ points: receiptData.points });
+}
